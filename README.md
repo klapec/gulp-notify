@@ -73,7 +73,7 @@ gulp.src("./src/test.ext")
   .pipe(notify("Found file: <%= file.relative %>!"));
 ```
 
-See [examples](examples/gulpfile.js) for more og the API section for various inputs.
+See [examples](examples/gulpfile.js) for more or the [API](#api) section for various inputs.
 
 ## Notes/tip
 
@@ -105,10 +105,10 @@ it is passed through [gulp-util.template](https://github.com/gulpjs/gulp-util#te
 ### notify(Function)
 Type: `function(VinylFile)`
 
-The result of the function is used as message.
 Vinyl File from gulp stream passed in as argument.
 
-The returned string can be a lodash template as
+The result of the function can be a string used as the message or an options object (see below).
+If the returned value is a string, it can be a lodash template as
 it is passed through [gulp-util.template](https://github.com/gulpjs/gulp-util#templatestring-data).
 
 If `false` is returned from the function the notification won't run.
@@ -211,7 +211,7 @@ will contain both title and message.
 
 ### notify.on(event, function (notificationOptions)) - Events
 
-**If the `wait` option is set to `true`**, the notifier will tigger
+**If the `wait` option is set to `true`**, the notifier will trigger
 events `click` or `timeout`, whether the user clicks the notification or it
 times out. You listen to these events on the main notify object, not the
 produces stream.
